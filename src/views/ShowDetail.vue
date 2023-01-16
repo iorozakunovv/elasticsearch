@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div v-if="show" class="mb-8 flex">
+    <div v-if="show" class="mb-8  flex">
       <div class="w-full h-auto flex">
         <img class="w-full h-auto"
           :src="show?.image?.original || 'https://upload.wikimedia.org/wikipedia/ru/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png'"
@@ -33,9 +33,9 @@
 <script>
 
 import CastShow from '../components/CastShow.vue'
-import { Swiper, SwiperSlide } from 'swiper/vue';
+// import { Swiper, SwiperSlide } from 'swiper/vue';
 
-import 'swiper/css';
+// import 'swiper/css';
 export default {
   data: () => ({
     show: null,
@@ -44,8 +44,8 @@ export default {
   }),
   components: {
     CastShow,
-    Swiper,
-    SwiperSlide,
+    // Swiper,
+    // SwiperSlide,
   },
   methods: {
     async getShow() {

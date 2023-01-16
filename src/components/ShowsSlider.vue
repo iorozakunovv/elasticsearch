@@ -26,8 +26,7 @@
 </template>
 <script>
 
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import 'swiper/css'
+// import 'swiper/css'
 export default {
   props: {
     shows: {
@@ -40,8 +39,8 @@ export default {
     }
   },
   components: {
-    Swiper,
-    SwiperSlide,
+    // Swiper,
+    // SwiperSlide,
   },
 }
 

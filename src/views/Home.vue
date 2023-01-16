@@ -1,5 +1,6 @@
 <template>
   <Layout>
+    <promo></promo>
     <div>
       <shows-slider :shows="thriller" title="Thriller" />
     </div>
@@ -13,6 +14,7 @@
 </template>
 <script>
 import ShowsSlider from "@/components/ShowsSlider.vue";
+import Promo from "@/components/Promo.vue"
 
 export default {
   data: () => ({
@@ -21,7 +23,8 @@ export default {
     crime: [],
   }),
   components: {
-    ShowsSlider
+    ShowsSlider,
+    Promo
   },
   methods: {
     async getAllShows() {

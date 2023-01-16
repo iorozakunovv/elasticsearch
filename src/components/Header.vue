@@ -38,9 +38,8 @@ export default {
   }),
   methods: {
     async getHeader() {
-      const res = await fetch('http://localhost:3000/header')
-      this.header = await res.json()
-
+      const res = await fetch('http://localhost:3000/header');
+      this.header = await res.json();
     }
   },
   mounted() {

@@ -21,6 +21,7 @@
   </Layout>
 </template>
 <script>
+
 import moment from 'moment';
 export default {
   data: () => ({
@@ -36,8 +37,7 @@ export default {
   },
   mounted() {
     this.getPerson()
-    // console.log(this.person.birthday)
-    // console.log(moment(this.person.birthday).format('YYYY'))
+
   },
   computed: {
     age() {
