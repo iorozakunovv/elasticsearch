@@ -1,14 +1,14 @@
 <template>
   <Layout>
-    <div v-if="show" class="mb-8  flex">
+    <div v-if="show" class="mb-8 flex justify-self-center text-blue-100 ">
       <div class="w-full h-auto flex">
-        <img class="w-full h-auto"
+        <img class="w-3/5 h-auto justify-center flex ml-4 bg-contain mt-4"
           :src="show?.image?.original || 'https://upload.wikimedia.org/wikipedia/ru/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png'"
           alt="">
       </div>
       <div class="px-4 py-4 flex" v-html="show.summary" />
     </div>
-    <h4 class="text-6xl py-6 px-4">Seasons</h4>
+    <h4 class="text-6xl py-6 px-4 text-blue-100">Seasons</h4>
     <swiper v-if="seasons" :slidesPerView="1" class=w-2/4>
       <swiper-slide v-for="season in seasons" class="relative">
         <div>
@@ -16,16 +16,16 @@
             :src="season?.image?.original || 'https://upload.wikimedia.org/wikipedia/ru/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png'"
             alt="">
           <div v-if="season.image"
-            class="absolute w-50 h-50 left-0 top-0 bg-gray-900/50 flex items-center justify-center">
-            <p class="text-8xl text-white font-bold">{{ season.number }}</p>
+            class="absolute w-50 h-50 left-0 top-0  bg-gray-900/50 flex items-center justify-center">
+            <p class="text-5xl text-blue-100 font-bold">{{ season.number }}</p>
           </div>
         </div>
 
       </swiper-slide>
 
     </swiper>
-    <h4 class="text-6xl py-6 px-4">Cast</h4>
-    <div v-for="cast in casts">
+    <h4 class="text-6xl py-6 px-4 text-blue-100">Cast</h4>
+    <div class="text-blue-100" v-for="cast in casts">
       <cast-show :cast="cast" />
     </div>
   </Layout>
@@ -33,9 +33,9 @@
 <script>
 
 import CastShow from '../components/CastShow.vue'
-// import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
-// import 'swiper/css';
+import 'swiper/css';
 export default {
   data: () => ({
     show: null,
@@ -44,8 +44,8 @@ export default {
   }),
   components: {
     CastShow,
-    // Swiper,
-    // SwiperSlide,
+    Swiper,
+    SwiperSlide,
   },
   methods: {
     async getShow() {

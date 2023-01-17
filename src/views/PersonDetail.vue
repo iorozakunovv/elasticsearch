@@ -7,13 +7,13 @@
           :alt="person.name">
       </div>
       <div class="px-4 py-6">
-        <h4 class="font-bold text-4xl" v-if="person.name.length">{{ person.name }}</h4>
+        <h4 class="font-bold text-4xl text-blue-100" v-if="person.name.length">{{ person.name }}</h4>
       </div>
       <div class="px-4 py-6">
-        <p v-if="person?.country?.code && person?.country?.name">
+        <p class="text-blue-100 " v-if="person?.country?.code && person?.country?.name">
           {{ `${person.country.code} - ${person.country.name}` }}
         </p>
-        <p v-if="person.birthday && person.birthday.length">Age - {{ age }} <span class="text-xs">({{
+        <p  class="text-blue-100 " v-if="person.birthday && person.birthday.length">Age - {{ age }} <span class="text-xs text-blue-100 ">({{
           person.birthday
         }})</span></p>
       </div>

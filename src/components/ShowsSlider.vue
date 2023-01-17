@@ -22,11 +22,8 @@
       </swiper-slide>
     </swiper>
   </div>
-
 </template>
 <script>
-
-// import 'swiper/css'
 export default {
   props: {
     shows: {
@@ -38,10 +35,5 @@ export default {
       default: ''
     }
   },
-  components: {
-    // Swiper,
-    // SwiperSlide,
-  },
 }
-
 </script>

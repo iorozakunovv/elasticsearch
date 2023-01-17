@@ -3,7 +3,7 @@
     <div class="w-1/2">
       <div class="flex items-center">
         <div class="w-1/2">
-          <img :src="cast?.character?.image?.medium" alt="">
+        <img :src="cast?.character?.image?.medium" alt="">
         </div>
         <div class="w-1/2 pl-2">
           <span>{{ cast?.character?.name }}</span>
@@ -11,7 +11,7 @@
       </div>
     </div>
     <div>
-      <!--      <span>-></span>-->
+<!--      <span>-></span>-->
     </div>
     <div class="w-1/2">
       <div class="flex items-center">
