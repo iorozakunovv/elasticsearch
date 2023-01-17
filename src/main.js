@@ -1,17 +1,21 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import router from "./router";
-import Layout from "@/layouts/Layout.vue";
-import { Swiper, SwiperSlide } from "swiper/vue";
-import "./assets/main.css";
-import "swiper/css";
-import "swiper/css/navigation";
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router'
+import Layout from '@/layouts/Layout.vue'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { createPinia } from 'pinia'
 
-const app = createApp(App);
+import 'swiper/css'
+import "swiper/css/navigation"
+import './assets/main.css'
 
-app.use(router);
-app.component("Layout", Layout);
-app.component("swiper", Swiper);
-app.component("swiper-slide", SwiperSlide);
+const app = createApp(App)
+const pinia = createPinia()
 
-app.mount("#app");
+app.use(router)
+app.use(pinia)
+app.component('Layout', Layout)
+app.component('swiper', Swiper)
+app.component('swiper-slide', SwiperSlide)
+
+app.mount('#app')

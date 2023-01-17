@@ -9,6 +9,7 @@ module.exports = {
     screens: {
       'md': {'max': '600px'}, //@media screen and (max-width: 600px)
       'sm': {'max': '400px'}, //@media screen and (max-width: 400px)
+      'md': {'max': '500px'}, //@media screen and (max-width: 400px)
     },
     extend: {},
   },
