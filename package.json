@@ -9,10 +9,11 @@
   },
   "dependencies": {
     "moment": "^2.29.4",
-    "pinia": "^2.0.29",
-    "swiper": "^8.4.5",
+    "pinia": "^2.0.30",
+    "swiper": "^8.4.7",
     "vue": "^3.2.45",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "vuetify": "^3.1.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",

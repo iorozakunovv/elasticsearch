@@ -1,59 +1,85 @@
 <template>
-  <header ref="header" class=" shadow-lg  shadow-blue-300 px-6 py-4 flex justify-end bg-gray-700 " v-if="header.length">
-    <div class="flex sm:hidden items-center ">
-      <div v-for="item in header" class="ml-4">
-        <router-link :to="item.link"
-                     :class="{ ' text-blue-500 underline': $route.path === item.link}"
-                     class="text-base font-medium">{{ item.name }}
-        </router-link>
+  <div class="nav-wrapper">
+    <div ref="myHeader" class="nav-inner container" >
+      <router-link class="icons" to="/">
+        Vue Movies
+      </router-link>
+      <div class="links-nav">
+        <router-link :class="routePath" to="/shows">MOVIES</router-link>
+        <router-link :class="routePath" to="/people">PEOPLE</router-link>
+        <Chart/>
+        <router-link  :class="routePath" to="/input">SIGN IN</router-link>
       </div>
     </div>
-    <div class="hidden sm:flex ">
-      <button class="w-6 h-6 flex flex-col justify-between" @click="menu = !menu">
-        <span class="w-full h-1 bg-blue-500"></span>
-        <span class="w-full h-1 bg-blue-400"></span>
-        <span class="w-full h-1 bg-blue-300"></span>
-      </button>
-    </div>
-    <div :class="menu ? 'right-0' : 'right-[-100%]'"
-         class="w-[80%] h-screen bg-gray-700 absolute top-0 duration-200 z-10">
-      <div class="p-6 relative">
-        <button @click="menu = false" class="absolute right-0 top-0 w-6 h-6 z-10 flex mt-2 mr-2">
-          <span class="w-full h-1 bg-blue-400 absolute inset-0 m-auto -rotate-45"></span>
-          <span class="w-full h-1 bg-blue-400 absolute inset-0 m-auto rotate-45"></span>
-        </button>
-        <div v-for="item in header" class="ml-4 mb-6">
-          <router-link :to="item.link"
-                       :class="{'text-blue-500 underline ': $route.path === item.link}"
-                       class="text-base font-medium">{{ item.name }}
-          </router-link>
-        </div>
-      </div>
-    </div>
-    <div @click="menu = false" v-if="menu"
-         class="w-full h-full absolute bg-gray-500 left-0 top-0 opacity-50"/>
-  </header>
+  </div>
 </template>
 <script>
-import { mapStores } from "pinia";
-import { useHeaderStore } from "@/stores/header";
+import Chart from './Chart.vue';
+import { mapStores } from 'pinia';
+import { useInputStore } from '../stores/getdata.js'
+import { useHeaderStore } from '../stores/header';
 export default {
-  data: () => ({
-    header: [],
-    menu: false,
-  }),
-  computed: {
-    ...mapStores(useHeaderStore)
+  data() {
+    return {
+
+      dialog: false,
+    }
+  },
+  components:{
+    // 'v-card':Card
+    Chart
   },
   methods: {
-    async getHeader() {
-      const res = await fetch('http://localhost:3000/header')
-      this.header = await res.json()
+    searchInput(){
+      console.log(this.movieInput.movieInputs)  
     },
+
   },
-  async mounted() {
-    await this.getHeader()
-    this.headerStore.headerHeight = await this.$refs.header.clientHeight
+  async  mounted() {
+    this.inputStore.headerHeight = this.$refs.myHeader.clientHeight
+    // console.log(this.inputStore.headerHeight);
+    await this.headerStore.getFavourite()
+  },
+  computed: {
+      ...mapStores(useHeaderStore, useInputStore)
   },
 }
 </script>
+<style lang="css">
+.nav-inner {
+  display: flex !important;
+  justify-content: space-around !important;
+}
+.nav-wrapper{
+  background: #000;
+}
+.listttt{
+  margin-right: 3px;
+}
+
+.nav-wrapper{
+  z-index: 10;
+  width: 100%;
+}
+.v-overlay__scrim {
+  opacity: 60% !important;
+}
+.routePath{
+  color: white ;
+
+}
+.links-nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+a{
+  padding: 0;
+  margin: 0 ;
+}
+.icons{
+  font-size: 28px;
+  display: flex;
+}
+</style>

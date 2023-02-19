@@ -1,4 +1,5 @@
 {
+  "favourite": [],
   "header": [
     {
       "name": "Home",
@@ -6,15 +7,15 @@
     },
     {
       "name": "About",
-      "link": "/about"
+      "link": "/people"
     },
     {
       "name": "Shows",
-      "link": "/shows"
+      "link": "/"
     },
     {
-      "name": "People",
-      "link": "/people"
+      "name": "input",
+      "link": "/input"
     }
   ]
 }

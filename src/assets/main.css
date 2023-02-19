@@ -1,14 +1,28 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import './base.css';
+
+.container{
+  max-width: 1280px;
+  margin: 0 auto;
+  font-weight: normal;
+}
 body{
-  background-color: rgb(51 65 85);
+  padding: 0;
   margin: 0;
 }
-a{
-  color:rgb(158, 203, 255);
-  font-weight: bold;
+a,
+
+.green {
+  text-decoration: none;
+  color: white;
+  transition: 0.4s;
 }
-img{
-  border-radius: 10px;
+@media (min-width: 1024px) {
+  /* body {
+    display: flex;
+    place-items: center;
+  } */
+
+  /* #app {
+    padding: 0 2rem;
+  } */
 }
