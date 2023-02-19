@@ -37,7 +37,6 @@ export default {
   },
   async  mounted() {
     this.inputStore.headerHeight = this.$refs.myHeader.clientHeight
-    // console.log(this.inputStore.headerHeight);
     await this.headerStore.getFavourite()
   },
   computed: {
