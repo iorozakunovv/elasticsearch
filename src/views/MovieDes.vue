@@ -38,6 +38,7 @@
   </Layout>
 </template>
 <script>
+
 import castShow from '../components/CastShow.vue'
 import Layout from '../layouts/Layout.vue'
 import { useInputStore } from '../stores/getdata';

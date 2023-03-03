@@ -1,19 +1,20 @@
 <template>
   <div class="nav-wrapper">
-    <div ref="myHeader" class="nav-inner container" >
+    <div ref="myHeader" class="nav-inner container">
       <router-link class="icons" to="/">
         Vue Movies
       </router-link>
       <div class="links-nav">
         <router-link :class="routePath" to="/shows">MOVIES</router-link>
         <router-link :class="routePath" to="/people">PEOPLE</router-link>
-        <Chart/>
-        <router-link  :class="routePath" to="/input">SIGN IN</router-link>
+        <Chart />
+        <router-link :class="routePath" to="/input">SIGN IN</router-link>
       </div>
     </div>
   </div>
 </template>
 <script>
+
 import Chart from './Chart.vue';
 import { mapStores } from 'pinia';
 import { useInputStore } from '../stores/getdata.js'
@@ -25,22 +26,22 @@ export default {
       dialog: false,
     }
   },
-  components:{
-    // 'v-card':Card
+  components: {
+
     Chart
   },
   methods: {
-    searchInput(){
-      console.log(this.movieInput.movieInputs)  
+    searchInput() {
+      // console.log(this.movieInput.movieInputs)  
     },
 
   },
-  async  mounted() {
+  async mounted() {
     this.inputStore.headerHeight = this.$refs.myHeader.clientHeight
     await this.headerStore.getFavourite()
   },
   computed: {
-      ...mapStores(useHeaderStore, useInputStore)
+    ...mapStores(useHeaderStore, useInputStore)
   },
 }
 </script>
@@ -49,36 +50,42 @@ export default {
   display: flex !important;
   justify-content: space-around !important;
 }
-.nav-wrapper{
+
+.nav-wrapper {
   background: #000;
 }
-.listttt{
+
+.listttt {
   margin-right: 3px;
 }
 
-.nav-wrapper{
+.nav-wrapper {
   z-index: 10;
   width: 100%;
 }
+
 .v-overlay__scrim {
   opacity: 60% !important;
 }
-.routePath{
-  color: white ;
+
+.routePath {
+  color: white;
 
 }
-.links-nav{
+
+.links-nav {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 20px;
 }
-a{
+
+a {
   padding: 0;
-  margin: 0 ;
+  margin: 0;
 }
-.icons{
+
+.icons {
   font-size: 28px;
   display: flex;
-}
-</style>
+}</style>

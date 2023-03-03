@@ -6,7 +6,7 @@ export const useHeaderStore = defineStore('header', {
     }),
     actions:{
         async getFavourite(){
-            const URL = 'http://localhost:3000/favourite'
+            // const URL = 'http://localhost:3000/favourite'
             const response = await fetch(URL)
             this.favourite = await response.json() || null
         }

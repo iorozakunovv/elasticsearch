@@ -1,4 +1,5 @@
 <script>
+
 import { useHeaderStore } from '../stores/header'
 import { mapStores } from 'pinia'
 export default {
